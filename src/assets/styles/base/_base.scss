@@ -1,0 +1,35 @@
+@use '../utils/mixins' as mix;
+@use '../utils/variables' as vars;
+@use '../utils/functions' as fn;
+
+#app {
+  color: rgba(#fff, .8);
+  background: #11100F;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: var(--white);
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif;
+  line-height: 1;
+  @media (max-width: vars.$md) {
+    font-size: 16px;
+  }
+  @media (max-width: vars.$sm) {
+    font-size: 14px;
+  }
+}
+
+
+
+.container {
+  width: 100%;
+  max-width: calc(vars.$container + (vars.$padding * 2));
+  margin: 0 auto;
+  padding-right: vars.$padding;
+  padding-left: vars.$padding;
+}
