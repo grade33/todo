@@ -2,13 +2,13 @@ import { defineStore } from 'pinia';
 
 export const useTodoStore = defineStore('todo', {
   state: () => ({
-    todoList: [],
+    todoList: JSON.parse(localStorage.getItem('todoList')) || [],
   }),
   actions: {
     addTodo(item) {
       this.todoList.push(item);
-
       this.sortTodos();
+      this.saveTodos();
     },
 
     updateTodo(updatedTodo) {
@@ -20,12 +20,18 @@ export const useTodoStore = defineStore('todo', {
       }
 
       this.sortTodos();
+      this.saveTodos();
     },
 
     deleteTodo(currentTodo) {
       this.todoList = this.todoList.filter(
         (todo) => todo.id !== currentTodo.id
       );
+      this.saveTodos();
+    },
+
+    saveTodos() {
+      localStorage.setItem('todoList', JSON.stringify(this.todoList));
     },
 
     sortTodos() {

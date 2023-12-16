@@ -111,9 +111,9 @@ export default {
   }
 
   &__input {
-    overflow: hidden;
     flex-grow: 1;
     padding: 14px 16px;
+    overflow: hidden;
     transition: color 0.2s ease-in-out;
 
     &::placeholder {

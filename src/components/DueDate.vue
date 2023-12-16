@@ -29,10 +29,10 @@ export default {
 
 <style lang="scss" scoped>
 .date {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 
   &__input {
     &::-webkit-calendar-picker-indicator {

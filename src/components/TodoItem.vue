@@ -50,14 +50,6 @@ export default {
     };
   },
   watch: {
-    todo: {
-      handler(newValue) {
-        if (!this.isUpdating) {
-          this.currentTodo = { ...newValue };
-        }
-      },
-      immediate: true,
-    },
     currentTodo: {
       handler(newValue) {
         this.updateTodo(newValue);

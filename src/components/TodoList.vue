@@ -3,7 +3,7 @@
     <TodoCreate />
     <div class="todo__list">
       <TodoItem
-        v-for="todoItem in todoList"
+        v-for="(todoItem) in todoList"
         :key="todoItem.id"
         :todo="todoItem"
       />
@@ -27,6 +27,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+  transform: translateX(30px);
+  opacity: 0;
+}
+
 .todo {
   display: flex;
   flex-direction: column;
